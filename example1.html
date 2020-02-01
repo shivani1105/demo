@@ -1,0 +1,48 @@
+<html> 
+<head> 
+<title> Data Validation </title> 
+<script language="javascript"> 
+function validate() 
+{ 
+var un=new RegExp("^[a-zA-Z]+$","g"); 
+var pw=new RegExp("^[a-zA-Z0-9]+$","g"); 
+var mob=new RegExp("^[0-9]+$","g"); 
+var em=new RegExp("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+.[a-zA-Z]{2,4}$","g"); 
+var uname=document.f1.t1.value; 
+var pwd=document.f1.t2.value; 
+var mobile=document.f1.t3.value; 
+var email=document.f1.t4.value; 
+if(uname.match(un)){ 
+ if(uname.length>=6)  { 
+  if(pwd.match(pw))   { 
+   if(pwd.length>=8)      { 
+       if(mobile.match(mob))       { 
+         if(mobile.length==10)   { 
+              if(email.match(em))    { 
+                alert("Form is submitted successfully"); 
+               } 
+else  { 
+
+ 
+                  alert("Invalid email");       }} 
+             else{ 
+               alert("Mobile number should be 10 digits");    }           } 
+           else { 
+             alert("Invalid mobile number");   }          } 
+          else   { 
+             alert("password must be atleast 8 characters");     }        } 
+        else   { 
+           alert("Invalid password");     }      } 
+      else   { 
+         alert("user name must have atleast 6 characters");      }     } 
+else{ 
+ alert("Invalid user name");}} 
+</script></head> 
+<body> 
+<form name="f1" onsubmit="validate()"> 
+Username<input type="text" name="t1"><br> 
+Password<input type="password" name="t2"><br> 
+Mobile no<input type="mno" name="t3"><br> 
+email<input type="email" name="t4"><br> 
+<input type="submit" value="submit"> 
+</form></body></html> 
